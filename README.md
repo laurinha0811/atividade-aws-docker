@@ -56,3 +56,17 @@ Depois de lançar a instância, siga os passos abaixo para se conectar:
 - Vá até o painel de instâncias EC2.
 - Selecione a instância que você criou e clique em Connect.
 - Siga as instruções para conectar via SSH. Exemplo de comando:
+
+```bash
+ssh -i "C:\Users\laura\Downloads\meu-par-de-chaves.pem" ec2-user@ec2-34-204-73-16.compute-1.amazonaws.com
+```
+
+# Passo 4: Verificar a instalação do Docker:
+Após conectar-se via SSH, verifique se o Docker foi intalado corretamente usando o seguinte comando:
+```bash
+# Verificar a versão do Docker
+docker --version
+
+# Testar se o Docker está rodando corretamente
+sudo docker run hello-world
+```
