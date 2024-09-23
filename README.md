@@ -17,4 +17,29 @@ No passo anterior foi mencionado a necessidade de usar o campo User Data para ro
 
 - Script User Data para Amazon Linux 2:
 No campo "User Data" da instância EC2, adicione o seguinte script:
+'''
+#!/bin/bash
+# Atualizar o sistema
+sudo yum update -y
+
+# Instalar o Docker
+sudo amazon-linux-extras install docker -y
+
+# Iniciar o serviço Docker
+sudo service docker start
+
+# Adicionar o usuário 'ec2-user' ao grupo docker
+sudo usermod -aG docker ec2-user
+
+# Ativar Docker para iniciar na inicialização
+sudo systemctl enable docker
+
+# Instalar o Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Testar se o Docker Compose foi instalado corretamente
+docker-compose --version
+'''
+
 ![image](https://github.com/user-attachments/assets/183b6129-6154-418d-8650-861a3b37e04b)
