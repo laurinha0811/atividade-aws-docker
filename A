@@ -1,0 +1,8 @@
+Vá para o AWS Management Console.
+Navegue até o serviço EC2.
+Clique em Launch Instance.
+Selecione uma Amazon Machine Image (AMI). Para este tutorial, selecione Amazon Linux 2 ou Ubuntu.
+Escolha o tipo de instância. A t2.micro (elegível para o nível gratuito) é suficiente para esse caso.
+Em Configure Instance Details, verifique se sua instância está dentro de uma VPC (rede privada).
+No campo User Data, adicione um script para automatizar a instalação do Docker (explicado mais abaixo).
+Continue a configuração e clique em Launch.
