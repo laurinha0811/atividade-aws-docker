@@ -43,6 +43,7 @@ docker-compose --version
 ```
 
 Na prática, ficará assim:
+
 ![image](https://github.com/user-attachments/assets/183b6129-6154-418d-8650-861a3b37e04b)
 
 Este script é responsável por:
