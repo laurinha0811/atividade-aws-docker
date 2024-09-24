@@ -75,6 +75,7 @@ docker --version
 sudo docker run hello-world
 ```
 Após a execução do comando "sudo docker run hello-world" você verá uma informação semelhante a essa, indicando que o Docker está funcionando corretamente.
+
 ![image](https://github.com/user-attachments/assets/3f1884b7-c994-45f4-ba67-538fee16f7d6)
 
 # Passo 2: Efetuar Deploy de uma aplicação WordPress
