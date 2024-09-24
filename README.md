@@ -1,7 +1,7 @@
 # Passo 1: Instalação e configuração do Docker/Containerd no host EC2
 Passo a passo para instalar e configurar Docker ou Containerd em uma instância EC2 na AWS.
 
-## 1. Lançar uma instância EC2
+## Lançar uma instância EC2
 Para criar uma instância EC2 no console da AWS é necessário seguir os seguintes passos: 
 1. Vá para o AWS Management Console.
 2. Navegue até o serviço EC2.
@@ -12,7 +12,7 @@ Para criar uma instância EC2 no console da AWS é necessário seguir os seguint
 7. No campo User Data, adicione um script para automatizar a instalação do Docker.
 8. Continue a configuração e clique em Launch.
 
-## 2: Instalação do Docker via User Data Script
+## Instalação do Docker via User Data Script
 No passo anterior foi mencionado a necessidade de usar o campo User Data para rodar scripts automaticamente na inicialização da instância. Abaixo está um exemplo de script user_data.sh para instalar e configurar o Docker.
 
 - Script User Data para Amazon Linux 2:
@@ -51,7 +51,7 @@ Este script é responsável por:
 - Adicionar o usuário padrão ec2-user ao grupo Docker para permitir rodar comandos sem sudo.
 - Instalar o Docker Compose.
 
-## 3: Conectar-se a instância EC2:
+## Conectar-se a instância EC2:
 Depois de lançar a instância, siga os passos abaixo para se conectar:
 - Vá até o painel de instâncias EC2.
 - Selecione a instância que você criou e clique em Connect.
@@ -64,7 +64,7 @@ ssh -i "C:\Users\laura\Downloads\meu-par-de-chaves.pem" ec2-user@ec2-34-204-73-1
 Após a execução do comando vocêw verá uma tela semelhante a essa: 
 ![image](https://github.com/user-attachments/assets/2eefc45c-a6ea-4855-9f4a-0148ce10b2c0)
 
-## 4: Verificar a instalação do Docker:
+## Verificar a instalação do Docker:
 Após conectar-se via SSH, verifique se o Docker foi intalado corretamente usando o seguinte comando:
 ```bash
 # Verificar a versão do Docker
@@ -78,3 +78,7 @@ Após a execução do comando "sudo docker run hello-world" você verá uma info
 
 # Passo 2: Efetuar Deploy de uma aplicação WordPress
 Agora vamos criar uma aplicação WordPress usando conteiners Docker e conectar ao banco de dados MySQL hospedado no RDS.
+
+## Criar um Banco de Dados RDS (MySQL)
+Vamos precisar de um banco de dados MySQL no Amazon RDS para armazenar os dados do WordPress. Para isso, basta seguir os seguintes passos: 
+- Acesse o console da AWS RDS e clique em "Create Database".
