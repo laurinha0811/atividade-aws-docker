@@ -14,7 +14,6 @@ Para criar uma instância EC2 no console da AWS é necessário seguir os seguint
 
 ## Instalação do Docker via User Data Script
 No passo anterior foi mencionado a necessidade de usar o campo User Data para rodar scripts automaticamente na inicialização da instância. Abaixo está um exemplo de script user_data.sh para instalar e configurar o Docker.
-
 - Script User Data para Amazon Linux 2:
 No campo "User Data" da instância EC2, adicione o seguinte script:
 
@@ -42,6 +41,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Testar se o Docker Compose foi instalado corretamente
 docker-compose --version
 ```
+
 Na prática, ficará assim:
 ![image](https://github.com/user-attachments/assets/183b6129-6154-418d-8650-861a3b37e04b)
 
