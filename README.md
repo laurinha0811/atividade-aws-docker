@@ -84,3 +84,20 @@ Agora vamos criar uma aplicação WordPress usando conteiners Docker e conectar 
 ## Criar um Banco de Dados RDS (MySQL)
 Vamos precisar de um banco de dados MySQL no Amazon RDS para armazenar os dados do WordPress. Para isso, basta seguir os seguintes passos: 
 - Acesse o console da AWS RDS e clique em "Create Database".
+- Escolha MySQL como o mecanismo do banco de dados.
+- Engine: Escolha a versão do MySQL.
+- Templates: Free Tier.
+- DB instance class: db.t3.micro
+- Storage: Defina a capacidade de armazenamento -  20 GB.
+
+Defina um nome de usuário (por exemplo: admin) e uma senha segura.
+
+Configurações de rede:
+- Certifique-se de configurar o RDS para estar na mesma VPC que a instância EC2.
+
+Criar a instância RDS: Clique em "Create Database" e aguarde até o banco de dados MySQL ser iniciado. Após a criação do banco de dados você verá uma tela semelhante a essa: 
+
+![image](https://github.com/user-attachments/assets/f88d0556-4e99-467f-9302-769416068545)
+
+## onectar o WordPress ao RDS (MySQL)
+Agora que temos o RDS MySQL pronto, o própximo passo será concectar a aplicação WordPress ao banco de dados durante o deploy.
