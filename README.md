@@ -100,4 +100,7 @@ Criar a instância RDS: Clique em "Create Database" e aguarde até o banco de da
 ![image](https://github.com/user-attachments/assets/f88d0556-4e99-467f-9302-769416068545)
 
 ## Conectar o WordPress ao RDS (MySQL)
-Agora que temos o RDS MySQL pronto, o própximo passo será concectar a aplicação WordPress ao banco de dados durante a implantação.
+Agora que temos o RDS MySQL pronto, o própximo passo será concectar a aplicação WordPress ao banco de dados durante o deploy.
+
+Vamos usar Docker Compose para a aplicação WordPress, para isso será necessário:
+- Criar um arquivo 'docker-compose.yml'. Em resumo, esse arquivo ficará responsável por definir como o Docker deve iniciar os containers para o WordPress e contectar ao banco MySQL
