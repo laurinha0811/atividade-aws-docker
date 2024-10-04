@@ -105,8 +105,6 @@ Agora que temos o RDS MySQL pronto, o própximo passo será concectar a aplicaç
 Vamos usar Docker Compose para a aplicação WordPress, para isso será necessário:
 - Criar um arquivo `docker-compose.yml`. Em resumo, esse arquivo ficará responsável por definir como o Docker deve iniciar os containers para o WordPress e contectar ao banco MySQL
 ```bash
-version: '3.1'
-
 services:
   wordpress:
     image: wordpress:latest
@@ -132,6 +130,24 @@ Explicação dos parâmetros utilizados:
 - `WORDPRESS_DB_PASSWORD`: é a senha do banco de dados MySQL (também configurada no RDS).
 - `WORDPRESS_DB_NAME`: é o nome do banco de dados MySQL que foi configurado.
 - `ports`: é a configuração 80:80 faz o container WordPress rodar na porta 80 instância EC2, tornando o site acessível via HTTP.
+
+Feito isso, podemos inicializar o conteiner WordPress:
+- Para isso, vamos ao diretório onde foi criado o arquivo docker-compose.yml, e lá vamos executar o seguinte comando:
+```bash
+docker-compose up -d
+```
+Em resumo, isso irá iniciar o container WordPress e conectar-se automaticamente ao banco de dados RDS MySQL:
+![image](https://github.com/user-attachments/assets/82f0a69e-dc5b-4e9b-9c86-86237011f0e2)
+
+## Acesso ao aplicativo WordPress:
+Feito a implantação, vamos conseguir acessar o Wordpress na porta 80 da nossa instância EC2. Para isso, vamos usar o URL associado à instância.
+Para confirmar que está funcionando:
+- Vamos acessar o IP público da instância EC2.
+- A página de instalação do WordPress deve aparecer.
+- Em seguida, é só concluir a instalação configurando o nome do site e credenciais de administrador do WordPress.
+
+![Captura de tela 2024-10-03 120450](https://github.com/user-attachments/assets/1224d295-0b74-4022-9b75-95c506f579cf)
+
 
 ![image](https://github.com/user-attachments/assets/f7717c97-7035-480f-a8b2-b5f5a3b1c56b)
 
