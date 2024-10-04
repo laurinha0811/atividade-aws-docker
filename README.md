@@ -148,6 +148,8 @@ Para confirmar que está funcionando:
 
 ![Captura de tela 2024-10-03 120450](https://github.com/user-attachments/assets/1224d295-0b74-4022-9b75-95c506f579cf)
 
-
 ![image](https://github.com/user-attachments/assets/f7717c97-7035-480f-a8b2-b5f5a3b1c56b)
+
+# Passo 3: Configuração do EFS (Elastic File System)
+Primeiramente, vamos criar o AWS EFS, para isso vamos até o console da AWS, pesquisando por "ESF" e vamos acessar o Elastic File System.
 
