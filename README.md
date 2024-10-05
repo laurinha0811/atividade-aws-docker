@@ -151,5 +151,39 @@ Para confirmar que está funcionando:
 ![image](https://github.com/user-attachments/assets/f7717c97-7035-480f-a8b2-b5f5a3b1c56b)
 
 # Passo 3: Configuração do EFS (Elastic File System)
-Primeiramente, vamos criar o AWS EFS, para isso vamos até o console da AWS, pesquisando por "ESF" e vamos acessar o Elastic File System.
 
+Primeiramente, vamos criar o AWS EFS, para isso vamos até o console da AWS, pesquisando por "ESF" e vamos acessar o Elastic File System. A partir dai é só seguir os seguintes passos: 
+- Clique em "Create File System".
+- Selecione a VPC onde sua instância EC2 está localizada.
+- Escolha as sub-redes nas zonas de disponibilidade, nesse caso as mesmas em que a EC2 esta rodando.
+- Selecione os grupos de segurança, lembre de garantir   que ela tenha acesso de inbound NFS (porta 2049).
+- Feito as configurações, basta clicar em Create.
+
+Agora, vamos conectar à instância EC2:
+- Para montar o EFS, instale os pacotes necessários:
+  ```bash
+  sudo yum install -y amazon-efs-utils
+    ```
+- Crie um diretório onde o EFS será montado:
+  ```bash
+  sudo mkdir /mnt/efs
+    ```
+- Monte o EFS:
+  ```bash
+  sudo mount -t efs fs-xxxxxxxx:/ /mnt/efs
+  ```
+Lembre-se de substituir o fs-xxxxxxxx pelo ID do seu próprio EFS.
+- Verifique se a montagem foi bem sucedida:
+ ```bash
+df -h
+ ```
+Na prática, você receberá resultados semelhantes a esses:
+![image](https://github.com/user-attachments/assets/d2bd1a3d-aaec-4320-9b55-684134a9cc56)
+
+Após atualizar o arquivo `docker-compose.yml`, é necessário reinicializar o Docker para aplicar as alterações:
+Feito isso, vamos integrar o EFS ao conteiner WordPress para armazenar os arquivos estáticos, para isso será necessário: 
+- Atualizar o arquivo `docker-compose.yml` para que o volume do ESF seja usado pelo WordPress:
+![image](https://github.com/user-attachments/assets/0ce4e73f-087d-4287-a943-c667c6e1b104)
+
+- Depois de atualizar o arquivo `docker-compose.yml`, reinicie o Docker Compose para aplicar as alterações:
+![image](https://github.com/user-attachments/assets/3659febd-6d3e-4119-bb4c-ba0ae3533629)
