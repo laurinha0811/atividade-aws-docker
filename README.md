@@ -189,10 +189,6 @@ Feito isso, vamos integrar o EFS ao conteiner WordPress para armazenar os arquiv
 ![image](https://github.com/user-attachments/assets/3659febd-6d3e-4119-bb4c-ba0ae3533629)
 
 ## Agora vamos verificar o funcionamento
-- Acesse o WordPress pelo navegador, faça login e tente carregar uma mídia.
-- Confirme que o upload foi bem sucedido e se o arquivo foi salvo no caminho do EFS.
-- É possível acessar o ponto de montagem /mnt/efs na instância EC2 para verificar se os arquivos enviados pelo WordPress estão armazenados lá.
-
-  Tela de login WordPress (http://54.91.39.246/wp-login.php):
+Tela de login WordPress (http://54.91.39.246/wp-login.php):
   ![image](https://github.com/user-attachments/assets/cedb0533-459e-48b7-a9b7-61e2ba87c86f)
 
