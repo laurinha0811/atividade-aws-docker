@@ -178,7 +178,7 @@ Na prática, você receberá resultados semelhantes a esses:
 
 Após atualizar o arquivo `docker-compose.yml`, é necessário reinicializar o Docker para aplicar as alterações. Feito isso, vamos integrar o EFS ao conteiner WordPress para armazenar os arquivos estáticos, para isso é necessário: 
 - Atualizar o arquivo `docker-compose.yml` para que o volume do ESF seja usado pelo WordPress:
-![image](https://github.com/user-attachments/assets/0ce4e73f-087d-4287-a943-c667c6e1b104)
+![image](https://github.com/user-attachments/assets/5c804129-84aa-4120-9af5-3a03a46c8a25)
 
 - Depois de atualizar o arquivo `docker-compose.yml`, reiniciar o Docker Compose para aplicar as alterações:
 ![image](https://github.com/user-attachments/assets/3659febd-6d3e-4119-bb4c-ba0ae3533629)
