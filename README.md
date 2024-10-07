@@ -184,7 +184,7 @@ Após atualizar o arquivo `docker-compose.yml`, é necessário reinicializar o D
 ![image](https://github.com/user-attachments/assets/3659febd-6d3e-4119-bb4c-ba0ae3533629)
 
 ## Agora vamos verificar o funcionamento
-Tela de login WordPress (http://54.91.39.246/wp-login.php):
+Tela de login WordPress:
 ![image](https://github.com/user-attachments/assets/cedb0533-459e-48b7-a9b7-61e2ba87c86f)
 
 # Passo 4: Load Balancer para a aplicação WordPress
