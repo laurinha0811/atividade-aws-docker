@@ -192,3 +192,38 @@ Feito isso, vamos integrar o EFS ao conteiner WordPress para armazenar os arquiv
 Tela de login WordPress (http://54.91.39.246/wp-login.php):
   ![image](https://github.com/user-attachments/assets/cedb0533-459e-48b7-a9b7-61e2ba87c86f)
 
+# Passo 4: Load Balancer para a aplicação WordPress
+Agora vamos configurar um Load Balancer Classic no AWS para gerenciar o tráfego de entrada da nossa aplicação WordPress e distribuir entre as instâncias EC2. Para isso será necessário seguir os seguintes passos:
+- Acessar o Console da AWS.
+- No menu de serviços, selecione EC2.
+- No painel esquerdo, desça até a seção Load Balancers.
+- Criar um Novo Load Balancer
+- No painel de Load Balancers, clique no botão Create Load Balancer.
+- Selecione a opção Application Load Balancer e clique em Continue.
+- Escolha a VPC na qual suas instâncias EC2 estão executando.
+- Escolha Internet-facing para que o Load Balancer seja acessível da Internet.
+
+Listeners:
+- Protocolo: Selecione HTTP.
+- Porta: porta padrão 80.
+
+Availability Zones:
+- Zonas de disponibilidade onde suas instâncias EC2 estão rodando.
+- Marque as sub-redes associadas a essas zonas.
+- Clique em Next: Assign Security Groups.
+
+Agora vamos configurar Grupos de Segurança
+- Assign a Security Group: o grupo de segurança deve permitir tráfego de entrada na porta 80.
+
+Configurar Verificação de Saúde (Health Checks)
+- Ping Protocol: Selecione HTTP.
+- Ping Port: Defina como 80.
+- Ping Path: Insira / para verificar a resposta da página principal do WordPress.
+Advanced Details:
+- Response Timeout: 5 seconds.
+- Interval: 30 seconds.
+- Unhealthy Threshold: 2.
+- Healthy Threshold: 2.
+- Clique em Next: Add EC2 Instances e adicione a instâncias EC2 ao Load Balancer.
+E pronto, nosso Load balancer foi criado:
+![image](https://github.com/user-attachments/assets/a5dac8ff-732d-49da-97e7-a6af34be82d1)
