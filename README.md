@@ -109,7 +109,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: database-2.cxsmgakqaa8w.us-east-1.rds.amazonaws.com:3306
       WORDPRESS_DB_USER: laura
-      WORDPRESS_DB_PASSWORD: 1337LBG!
+      WORDPRESS_DB_PASSWORD: ********
       WORDPRESS_DB_NAME: wordpress_db
     volumes:
       - wordpress-data:/var/www/html
