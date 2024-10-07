@@ -1,4 +1,4 @@
-# Passo 1: Instalação e configuração do Docker/Containerd no host EC2
+# Passo 1: Instalação e configuração do Docker no host EC2
 Passo a passo para instalar e configurar Docker ou Containerd em uma instância EC2 na AWS.
 
 ## Lançar uma instância EC2
