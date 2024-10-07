@@ -168,7 +168,7 @@ Agora, vamos conectar à instância EC2. Para montar o EFS, instale os pacotes n
 Lembre-se de substituir o fs-xxxxxxxx pelo ID do seu próprio EFS.
 
 - Verifique se a montagem foi bem sucedida:
-- 
+
  ```bash
 df -h
  ```
